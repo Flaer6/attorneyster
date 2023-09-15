@@ -1,0 +1,29 @@
+$gold: #d1b06b;
+$dark: #1f2732;
+
+%subtitle {
+  font-family: Cormorant Garamond;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+}
+%flex-justify {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+%smooth {
+  transition: all 0.3s ease;
+}
+@mixin bg-image($url, $position, $size) {
+  background: {
+    image: url($url);
+    position: $position;
+    size: $size;
+    repeat: no-repeat;
+  }
+}

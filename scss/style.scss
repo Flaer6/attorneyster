@@ -1,0 +1,744 @@
+@import "reset"; //обнуление
+@import "global"; //глобальные стили
+@import "vars"; //переменые и миксины
+
+//Медиа в конце кода
+
+/**********************/
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  &__inner {
+    padding: 2.5rem 0 1.25rem;
+  }
+  &__box {
+    @extend %flex-justify;
+    padding-bottom: 1.88rem;
+  }
+  &__link {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.56rem 4.44rem;
+    font-size: 1.375rem;
+    line-height: 2.2rem; /* 160% */
+    letter-spacing: 0.025rem;
+    @extend %smooth;
+    &:hover {
+      background-color: $gold;
+      color: $dark;
+    }
+  }
+}
+.menu {
+  border-top: 1px solid #4e555f;
+  border-bottom: 1px solid #4e555f;
+  padding: 2.81rem 0 3.06rem;
+  @extend %flex-justify;
+  &__list {
+    @extend %flex-align;
+    gap: 0 3rem;
+  }
+  &__list-link {
+    font-size: 1.375rem;
+    line-height: 2.2rem; /* 160% */
+    letter-spacing: 0.025rem;
+    @extend %smooth;
+    &:hover {
+      color: $gold;
+    }
+  }
+  &__contacts {
+    @extend %flex-align;
+    gap: 0 3.13rem;
+  }
+  &__contacts-item {
+    @extend %flex-align;
+    gap: 0 0.75rem;
+  }
+  &__contacts-title {
+    color: $gold;
+    font-size: 1.125rem;
+    line-height: 1.8rem; /* 160% */
+    letter-spacing: 0.025rem;
+  }
+  &__contacts-link {
+    font-size: 1.375rem;
+    line-height: 1.65rem; /* 120% */
+    letter-spacing: 0.025rem;
+    @extend %smooth;
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+.top {
+  position: relative;
+  padding-top: 20rem;
+  @include bg-image("../images/top-bg.webp", center, cover);
+  &__inner {
+    @extend %flex-justify;
+  }
+  &__content {
+    max-width: 41.8125rem;
+  }
+  &__title {
+    font-family: Cormorant Garamond;
+    font-size: 4.0625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4.875rem; /* 120% */
+    letter-spacing: 0.025rem;
+    margin-top: 0.87rem;
+  }
+  &__info {
+    color: $gold;
+    font-size: 1.375rem;
+    line-height: 2.475rem; /* 180% */
+    letter-spacing: 0.025rem;
+    padding: 1.31rem 0px 1.75rem;
+  }
+  &__link {
+    border: 1px solid $gold;
+    background-color: $gold;
+    color: $dark !important;
+    padding: 1.5rem 4.44rem;
+    @extend %smooth;
+    &:hover {
+      color: #fff !important;
+      background-color: transparent;
+    }
+  }
+}
+.about {
+  padding: 9.38rem 0rem 8.94rem;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.88rem 0;
+  }
+  &__item {
+    @extend %flex-align;
+    gap: 0 3.86rem;
+  }
+  &__title {
+    margin-bottom: 0.7rem;
+  }
+  &__info {
+    padding-top: 2.7rem;
+  }
+  &__user {
+    @extend %flex-align;
+    gap: 0 1.3rem;
+    margin-bottom: 2.8rem;
+  }
+  &__user-name {
+    @extend %subtitle;
+    font-size: 2.5rem;
+    line-height: 3.25rem; /* 130% */
+    letter-spacing: 0.025rem;
+  }
+  &__box {
+    @extend %flex-align;
+    gap: 0 1.87rem;
+    &-item:nth-child(1) {
+      background-color: #3b434e;
+    }
+    &-item:nth-child(2) {
+      background-color: $gold;
+      color: #000;
+    }
+  }
+  &__box-item {
+    @extend %flex-align;
+    gap: 0 1.25rem;
+    padding: 2rem 3.12rem;
+  }
+  &__box-icon {
+    border-radius: 0.3125rem;
+    background: #161d27;
+    color: #fff;
+    padding: 0.56rem 0.94rem 0.69rem;
+  }
+}
+.pages {
+  padding: 8.12rem 0px 8.75rem;
+  &__box {
+    @extend %flex-justify;
+    padding-bottom: 3.75rem;
+  }
+  &__title {
+    max-width: 22.8125rem;
+  }
+  &__info {
+    max-width: 41.25rem;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.87rem 1.87rem;
+  }
+  &__item {
+    padding: 3.44rem 3.13rem 4.37rem;
+    background-color: #1f2732;
+  }
+  &__item-content {
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid #4e555f;
+  }
+  &__item-title {
+    padding-bottom: 0.5rem;
+    color: #fff;
+    @extend %subtitle;
+    font-size: 2.1875rem;
+    line-height: 3.5rem; /* 160% */
+    letter-spacing: 0.025rem;
+  }
+  &__item-link {
+    @extend %flex-justify;
+    padding-top: 2.39rem;
+  }
+  &__item-link-item {
+    padding: 0.81rem 2.62rem;
+    background: #161d27;
+    color: #fff;
+    @extend %smooth;
+    &:hover {
+      background-color: $gold;
+      color: $dark;
+    }
+  }
+}
+.privilege {
+  padding: 7.75rem 0 5.06rem;
+  background-color: #fff;
+  color: #909090;
+  &__box {
+    max-width: 39.68rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__title {
+    color: #161d27;
+    max-width: 25.125rem;
+    margin: 0 auto;
+    padding-bottom: 0.69rem;
+  }
+  &__info {
+    padding: 2.5rem 0rem 3.75rem;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.88rem;
+  }
+  &__item {
+    background: #fbfbfb;
+    padding: 1.87rem;
+    @extend %flex-align;
+    gap: 0 1.25rem;
+  }
+  &__item-rank {
+    border: 2px solid #d1b06b;
+    padding: 1.94rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  &__item-num {
+    color: #1f2732;
+    font-family: Outfit;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4375rem; /* 130% */
+    letter-spacing: 0.025rem;
+  }
+  &__item-icon {
+    width: 1.375rem;
+    height: 1.25rem;
+    margin: 0 auto;
+  }
+  &__item-title {
+    color: #1f2732;
+    font-family: Cormorant Garamond;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.625rem; /* 140% */
+    letter-spacing: 0.025rem;
+  }
+  &__criminal {
+    padding: 2.5rem 3.12rem;
+    color: #fff;
+    @include bg-image("../images/criminal-bg.webp", center, cover);
+    .privilege__item-title {
+      color: #fff;
+      font-family: Outfit;
+      font-size: 1.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2.4375rem; /* 130% */
+      letter-spacing: 0.025rem;
+      padding-top: 0.62rem;
+    }
+    .privilege__item-info {
+      max-width: 10.1875rem;
+      font-family: Outfit;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.625rem; /* 130% */
+      letter-spacing: 0.025rem;
+    }
+  }
+}
+.sponsors {
+  background-color: #fff;
+  &__wrapper {
+    padding: 5rem 0rem 8.13rem;
+    border-top: 1px solid #d7d7d7;
+    text-align: center;
+  }
+  &__title {
+    /* @extend %flex-align; */
+    display: inline-flex;
+    align-items: center;
+    gap: 0 2.5rem;
+    color: #161d27;
+  }
+  &__inner {
+    @extend %flex-justify;
+    gap: 7rem;
+    padding-top: 5rem;
+  }
+}
+.information {
+  @include bg-image("../images/information-bg.webp", center, cover);
+  padding: 8.75rem 0;
+  &__inner {
+    padding: 5rem 3.75rem 4.36rem;
+    background: rgba(31, 39, 50, 0.85);
+    @extend %flex-justify;
+    gap: 0 5rem;
+  }
+  &__title {
+    font-family: Cormorant Garamond;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.65625rem; /* 130% */
+    letter-spacing: 0.025rem;
+    text-transform: capitalize;
+    margin-bottom: 3.13rem;
+    img {
+      display: block;
+      padding-top: 0.69rem;
+    }
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0;
+  }
+  /*   &__item {
+  padding-bottom: 2rem;
+} */
+  &__item-title {
+    color: #d1b06b;
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem; /* 130% */
+    letter-spacing: 0.025rem;
+    text-transform: capitalize;
+    padding-bottom: 0.81rem;
+  }
+  &__right-text {
+    margin-bottom: 2.33rem;
+  }
+  &__box-title {
+    @extend %flex-justify;
+    padding-bottom: 0.62rem;
+  }
+  &__progress {
+    margin-bottom: 2.5rem;
+    min-width: 100%;
+    max-height: 0.3125rem;
+    background-color: #fff;
+    &:value {
+      background-color: $gold;
+    }
+    &::-webkit-progress-value {
+      background-color: $gold;
+    }
+    &::-moz-progress-bar {
+      background-color: $gold;
+    }
+    &::-ms-fill {
+      background-color: $gold;
+    }
+    &::-o-progress-bar {
+      background-color: $gold;
+    }
+  }
+  &__link {
+    padding: 1.5rem 4.44rem;
+    background-color: $gold;
+    border: 1px solid $gold;
+    color: $dark;
+    @extend %smooth;
+    &:hover {
+      background-color: transparent;
+      color: $gold;
+    }
+  }
+}
+.reviews {
+  padding: 7.75rem 0 11.25rem;
+  &__title {
+    text-align: center;
+    img {
+      display: block;
+      margin-top: 0.7rem;
+      margin: 0.7rem auto 0;
+    }
+  }
+  &__inner {
+    padding-top: 6.25rem;
+    @extend %flex-align;
+    gap: 0 1.81rem;
+  }
+  &__item-box {
+    background-color: #2e3947;
+    padding: 3.19rem 2.81rem 3.56rem;
+    border-radius: 2.5rem 0.0625rem 0.0625rem 0.0625rem;
+    &.bottom {
+      border-radius: 0.0625rem 0.0625rem 0.0625rem 2.5rem;
+    }
+  }
+  &__item-img {
+    padding-bottom: 2rem;
+  }
+  &__user {
+    padding: 1.25rem 0;
+    @extend %flex-align;
+    gap: 0 1.37rem;
+  }
+  &__user-name {
+    color: #fff;
+    font-family: Cormorant Garamond;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4375rem; /* 130% */
+    letter-spacing: 0.025rem;
+  }
+}
+.experienced {
+  padding: 7.75rem 0 8.19rem;
+  background-color: #fff;
+  color: #161d27;
+  &__title {
+    text-align: center;
+    color: inherit;
+    max-width: 43.25rem;
+    margin: 0 auto;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &__inner {
+    padding-top: 4.38rem;
+    @extend %flex-align;
+    gap: 0 1.87rem;
+  }
+  &__box {
+    padding-top: 1.25rem;
+    text-align: center;
+  }
+  &__name {
+    font-family: Cormorant Garamond;
+    font-size: 1.875rem;
+    font-weight: 400;
+    line-height: 2.4375rem; /* 130% */
+    letter-spacing: 0.025rem;
+  }
+  &__profesion {
+    color: $gold;
+  }
+}
+.help {
+  &__inner {
+    padding: 8.76rem 0rem;
+    @extend %flex-justify;
+    gap: 0 6rem;
+  }
+  &__content {
+    max-width: 39.25rem;
+  }
+  &__title {
+    img {
+      display: block;
+    }
+  }
+  &__info {
+    padding: 2.69rem 0rem 2.31rem;
+  }
+  &__link {
+    background-color: $gold;
+    color: $dark;
+    padding: 1.5rem 4.44rem;
+    &:hover {
+      background-color: transparent;
+      color: $gold;
+      border: 1px solid $gold;
+    }
+  }
+  &__consultation {
+    background-color: #fff;
+    padding: 2.5rem;
+  }
+  &__consultation-box {
+    border: 15px solid #d7d7d7;
+    padding: 4rem 3.4rem 4.6rem;
+  }
+  &__consultation-info {
+    color: #909090;
+    padding: 0.75rem -0px 2.3rem;
+  }
+  &__consultation-title {
+    @extend %subtitle;
+    color: $dark;
+    font-size: 2.625rem;
+    line-height: 3.4125rem; /* 130% */
+    letter-spacing: 0.025rem;
+  }
+  &__consultation-call {
+    @extend %flex-align;
+    gap: 0 0.94rem;
+  }
+  &__consultation-text {
+    color: $dark;
+  }
+  &__consultation-number {
+    color: $dark;
+    font-size: 1.875rem;
+    line-height: 2.625rem; /* 140% */
+    @extend %smooth;
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+.application {
+  padding: 8.75rem 0rem;
+  @include bg-image("../images/application-bg.webp", center, cover);
+  &__inner {
+    background: $dark;
+    padding: 5.56rem 6.25rem 6.25rem;
+  }
+  &__form {
+    text-align: center;
+    input {
+      padding: 2.38rem 0rem 1.68rem;
+    }
+    textarea {
+      padding-top: 4rem;
+    }
+  }
+  &__user-info {
+    @extend %flex-align;
+    gap: 0 2.9rem;
+    div {
+      width: 100%;
+    }
+  }
+  &__input {
+    display: block;
+    background-color: transparent;
+    border-bottom: 1px solid #3b434e;
+    width: 100%;
+    caret-color: #fff;
+    caret-style: solid;
+    &::placeholder {
+      color: #fff;
+      font-size: 1.5625rem;
+      line-height: 1.35rem; /* 86.4% */
+    }
+    &:focus::placeholder {
+      color: $dark;
+    }
+  }
+  &__btn {
+    padding: 2rem;
+    margin-top: 3rem;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #3b434e;
+    font-size: 1.5625rem;
+    font-weight: 700;
+    line-height: 1.35rem; /* 86.4% */
+    @extend %smooth;
+    &:hover {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+}
+.blog {
+  padding: 8.69rem 0rem 6.25rem;
+  border-bottom: 1px solid #4e555f;
+  &__title {
+    @extend %subtitle;
+    color: #fff;
+    text-align: center;
+    font-size: 2.8125rem;
+    line-height: 3.375rem; /* 120% */
+    img {
+      display: block;
+      margin: 0.69rem auto 0rem;
+    }
+  }
+  &__inner {
+    padding-top: 4.37rem;
+    @extend %flex-align;
+    gap: 0 3.12rem;
+  }
+  &__date {
+    padding-bottom: 1.5rem;
+    color: $gold;
+    border-bottom: 1px solid #4e555f;
+  }
+  &__content-title {
+    padding: 1.31rem 0rem 1.62rem;
+    color: #fff;
+    font-family: Cormorant Garamond;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.65625rem; /* 130% */
+  }
+  &__link {
+    color: $gold;
+    text-decoration: underline;
+    margin-top: 1rem;
+    @extend %smooth;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.news {
+  &__inner {
+    padding: 6.25rem 0rem 8.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6.19rem 1.25rem;
+  }
+  &__date {
+    padding: 1.5rem 0rem 1.37rem;
+    color: $gold;
+    border-bottom: 1px solid #4e555f;
+  }
+  &__item-title {
+    color: #fff;
+    font-family: Cormorant Garamond;
+    font-size: 1.875rem;
+    line-height: 2.4375rem; /* 130% */
+    padding: 1.62rem 0rem 1.37rem;
+  }
+  &__item-link {
+    color: $gold;
+    text-decoration: underline;
+    margin-top: 1rem;
+    @extend %smooth;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.bg-image {
+  height: 15.5rem;
+  @include bg-image("../images/bg-image.webp", center, cover);
+}
+.footer {
+  padding: 8.12rem 0rem 6.87rem;
+  &__logo {
+    width: 100%;
+  }
+  &__inner {
+    padding: 5.94rem 0rem 5.37rem;
+    @extend %flex-justify;
+    align-items: flex-start !important;
+    gap: 0 6.25rem;
+  }
+  &__item-links {
+    @extend %flex-justify;
+    align-items: flex-start;
+    gap: 0 4rem;
+  }
+  &__item-title {
+    @extend %subtitle;
+    color: #fff;
+    font-size: 1.875rem;
+    line-height: 2.4375rem; /* 130% */
+    padding: 1.31rem 0rem;
+    border-top: 1px solid #3b434e;
+    border-bottom: 1px solid #3b434e;
+    margin-bottom: 2.44rem;
+  }
+  &__address {
+    max-width: 21.8rem;
+    padding-bottom: 4.37rem;
+  }
+  &__list-item + &__list-item {
+    padding-top: 1.5rem;
+  }
+  &__list-link {
+    @extend %smooth;
+    &:hover {
+      color: $gold;
+    }
+  }
+  &__phone {
+    padding-bottom: 1.25rem;
+  }
+  &__phone-link:hover,
+  &__email-link:hover {
+    @extend %smooth;
+    color: $gold;
+  }
+  &__copyright {
+    @extend %flex-justify;
+    padding: 1.87rem 0rem 2.87rem;
+    border-top: 1px solid #3b434e;
+    border-bottom: 1px solid #3b434e;
+    gap: 0 1.5rem;
+  }
+  &__copyright-link {
+    color: $gold;
+    @extend %smooth;
+    font-size: 1.375rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__follow-text {
+    color: $gold;
+  }
+  &__follow-list,
+  &__follow {
+    @extend %flex-align;
+    gap: 0 1.25rem;
+  }
+}
+
+@import "media"; //медиа-запросы
